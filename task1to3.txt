@@ -1,0 +1,26 @@
+
+----------------------TASK 1----------------------
+
+select Source,SUM(Summary) from ENTRYS where Month = '01.07.09' Group by Source,Credit having COUNT(*) > 1 
+
+
+----------------------TASK 2----------------------
+
+select CAGES.Doc_ID,CAGES.Cage_date,CAGES.Summary,ENTRYS.Summary from CAGES
+INNER JOIN ENTRYS on ENTRYS.Source_id=CAGES.Doc_ID
+where CAGES.Type ='R'
+
+----------------------TASK 3----------------------
+
+create table [dbo].[Order]
+(
+	[Document_Number] INT IDENTITY NOT NUll Primary key,
+	[Order_date] NVARCHAR (8) NOT NUll,
+	[Delivery_contract] INT NOT NUll,
+	[Contractor] NVARCHAR (MAX) NOT NUll,
+	[Storage] NVARCHAR (MAX) NOT NUll,
+	[Stock_number] INT NOT NUll,
+	[Amount] INT NOT NUll,
+	[Price] INT NOT NUll,
+	[Cost] INT NOT NUll,
+);
